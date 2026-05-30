@@ -1,0 +1,45 @@
+# Same defaults as RQVAE/config.yaml (tokenizer2 + layers2 path via RQVAE2Tokenizer).
+metadata: sentence
+
+sent_emb_model: sentence-t5-base
+sent_emb_batch_size: 512
+sent_emb_dim: 9192
+sent_emb_pca: 128
+rqvae_title_desc_dim: 8192
+rqvae_pretrain_dim: 64
+rqvae_title_desc_reduce_dim: 64
+rqvae_pretrain_reduce_dim: 64
+
+sem_ids_dir: sem_ids
+sem_ids_path: ~
+
+vq_n_codebooks: 4
+vq_codebook_size: 256
+
+rqvae_optimizer: AdamW
+rqvae_hidden_sizes: [512,256]
+rqvae_e_dim: 64
+rqvae_dropout: 0.0
+rqvae_lr: 5e-5
+rqvae_l2: 1e-4
+rqvae_batch_size: 2048
+rqvae_epoch: 10000
+rqvae_verbose: 50
+rqvae_beta: 0.25
+rqvae_sk_epsilon: 0.003
+rqvae_sk_iters: 10
+
+rqvae_quant_weight: 1.0
+rqvae_bn: False
+kmeans_init: True
+kmeans_iters: 100
+rqvae_save_method: collision
+
+cred_reg_enable: True
+cred_known_ratio: 1
+cred_reg_weight: 1
+# Multiplier on inter term (-MSE between class centers); intra_cred / intra_uncred stay 1.
+cred_reg_inter_weight: 100
+cred_reg_representation: residual
+cred_reg_margin: 5.0
+cred_reg_seed: 2024

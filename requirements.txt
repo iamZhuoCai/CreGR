@@ -1,0 +1,18 @@
+# CUDA 12.4 wheels for PyTorch (required for torch==...+cu124)
+--extra-index-url https://download.pytorch.org/whl/cu124
+
+accelerate==1.10.0
+datasets>=2.14.0,<4
+numpy==2.3.5
+PyYAML==6.0.3
+Requests==2.32.5
+scikit_learn==1.7.2
+sentence_transformers==5.1.0
+torch==2.6.0+cu124
+tqdm==4.67.1
+transformers==4.55.0
+huggingface_hub>=0.20.0
+
+# Optional: FlashAttention-2 (faster attention). Requires CUDA toolkit (nvcc) and CUDA_HOME.
+# The model falls back to standard attention if flash_attn is not installed.
+# pip install flash_attn==2.8.3 --no-build-isolation

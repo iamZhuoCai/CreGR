@@ -1,0 +1,29 @@
+category: GossipCop  # GossipCop / MHMisinfo / PolitiFact
+metadata: embedding  # Use pre-computed LLaMA embeddings
+
+# Auto-download Disco raw files when cache/Disco_v2/data/{category} is missing.
+disco_hf_repo: anony-user-2025/Credible_Content_Rec
+# Optional mirror, e.g. https://hf-mirror.com (sets HF_ENDPOINT during download).
+disco_hf_endpoint: ~
+# Optional glob list; default downloads only data/{category}/* from the repo.
+disco_hf_allow_patterns: ~
+# Auto-download collaborative embeddings when missing (pretrain_*.npy / pretrained_*.npy).
+disco_auto_download_pretrain: true
+# Optional override for pretrain-only HF globs; default tries all known filenames.
+disco_hf_pretrain_patterns: ~
+split: last_out
+seq_size: 4  # Fixed sequence length in Disco
+
+# One sample per raw row (seq, next) in train_data.df / test_data.df — no sliding-window reconstruction
+disco_raw_rows: true
+
+# Full train.df for train, test.df for test; no val split / no early stopping
+train_without_validation: true
+skip_validation: true
+patience: null
+topk: [5, 10]
+val_topk: [5, 10]
+val_metric: ndcg@5
+metrics: [ndcg, recall, cr]
+# Periodic full test metrics (ndcg/recall/cr @ topk) during training
+test_eval_interval: 10
