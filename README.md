@@ -11,9 +11,6 @@ Official implementation of **Generate What You Can Trust: Content Credibility in
 Install dependencies:
 
 ```bash
-cd Paper6/CreGR
-python -m venv .venv
-source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
