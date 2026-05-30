@@ -260,14 +260,3 @@ CUDA_VISIBLE_DEVICES=0 python -u main.py \
 ```
 
 ---
-
-## Citation
-
-```bibtex
-@article{shi2025cregr,
-  title={CreGR: Discrete Diffusion for Parallel Semantic ID Generation in Generative Recommendation},
-  author={Shi, Teng and Shen, Chenglei and Yu, Weijie and Nie, Shen and Li, Chongxuan and Zhang, Xiao and He, Ming and Han, Yan and Xu, Jun},
-  journal={arXiv preprint arXiv:2511.06254},
-  year={2025}
-}
-```
